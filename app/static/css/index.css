@@ -1,0 +1,17 @@
+*{
+    list-style-type: none;
+}
+
+h1{
+    text-align: center;
+}
+
+ul li{
+    list-style-type:none;
+}
+
+#lisu{
+    margin-top: 0;
+    margin-bottom: 1rem;
+    list-style-type: none;
+}
