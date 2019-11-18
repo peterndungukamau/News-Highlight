@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +15,19 @@
     {% endif %}
 </head>
 <body>
+        {% block content %}
+
     <h1>Welcome To The News Highlight</h1>
+    <ul>
+        {% for latest_news in  latest%}
+        <li>{{latest_news.name}}</li>
+        <li>{{latest_news.description}}</li>
+        {% endfor %}
+    </ul>
+
+    {% endblock %}
+    <ul>
+            {{ macro.displayMovieList(latest)}}
+    </ul>
 </body>
 </html>
