@@ -37,28 +37,14 @@ def process_results(news_list):
             id = news_item.get('id')
             name = news_item.get('name')
             description = news_item.get('description')
+            url = news_item.get('url')
 
-            news_object = News(id,name,description)
+            news_object = News(id,name,description,url)
             news_results.append(news_object)
 
         return news_results   
 
-def get_new(id):
-    get_news_details_url = base_url.format(id,api_key)
 
-    with urllib.request.urlopen(get_news_details_url) as url:
-        news_details_data = url.read()
-        news_details_response = json.loads(news_details_data)
-
-        news_object = None
-        if news_details_response:
-            id = news_details_response.get('id')
-            name = news_details_response.get('name')
-            description = news_details_response.get('description')
-
-            news_object = News(id,name,description)
-
-    return news_object
 
             
        
