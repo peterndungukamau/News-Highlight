@@ -1,8 +1,8 @@
 from flask import render_template
-from app import app
-from .request import get_news
+from ..request import get_news
+from. import main
 
-@app.route('/')
+@main.route('/')
 def index():
     '''
     view page functions that returns an index page and its data
@@ -13,7 +13,7 @@ def index():
     return render_template('index.html',title = title,latest = latest_news)
 
 
-@app.route('/new/<int:id>')
+@main.route('/new/<int:id>')
 def new(id):
     '''
      view page that returns news details and its data
